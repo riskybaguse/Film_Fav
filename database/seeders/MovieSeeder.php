@@ -62,7 +62,7 @@ class MovieSeeder extends Seeder
                     'Drama & Thriller',
                     'Crime'
                 ]),
-                'release_year' => fake()->year(),
+                'release_year' => fake()->numberBetween(2000, date('Y')),
                 'synopsis' => fake()->paragraph(10),
                 'poster_url' => $posterURLS[$i % count($posterURLS)],
             ]);

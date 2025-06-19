@@ -1,10 +1,10 @@
 @push('styles')
-    <style>
-        header.shadow {
-            background-color: transparent !important;
-            box-shadow: none !important;
-        }
-    </style>
+<style>
+    header.shadow {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+</style>
 @endpush
 
 <x-app-layout>
@@ -48,9 +48,9 @@
                             <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
                                 Genre: <span class="font-semibold">{{ $movie->genre }}</span>
                             </p>
-                            
+
                             <hr class="my-4 border-gray-200 dark:border-gray-700">
-                            <p class="text-gray-700 dark:text-gray-300 mt-3 text-justify">
+                            <p class="text-gray-700 dark:text-gray-300 mt-3" style="text-align: justify;">
                                 {{ $movie->synopsis ?? 'Sinopsis belum tersedia.' }}
                             </p>
                         </div>
@@ -71,8 +71,10 @@
                 </div>
                 @empty
                 <!-- No Movies Available -->
-                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden p-12 text-center">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Belum Ada Data Film</h3>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden p-12 rounded-lg">
+                    <center>
+                        <h3 class="text-xl font-semibold text-white dark:text-white">Belum Ada Data Film :(</h3>
+                    </center>
                 </div>
                 @endforelse
             </div>
