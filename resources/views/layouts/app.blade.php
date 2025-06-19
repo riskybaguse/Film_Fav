@@ -11,7 +11,6 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -53,4 +52,12 @@
             </div>
         </footer>
     </body>
+    <script>
+        setTimeout(function(){
+            var div = document.getElementById("myDiv");
+            if (div){
+                div.style.display = "none";
+            }
+        }, 2000);
+    </script>
 </html>
