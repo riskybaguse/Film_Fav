@@ -9,7 +9,7 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+        <h2 class="font-semibold text-white leading-tight" style="font-size: 30px;">
             {{ $movie->title }} ({{ $movie->release_year }})
         </h2>
     </x-slot>
@@ -17,11 +17,12 @@
     <div class="py-16 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div class="z-10">
-                <h1 class="text-3xl font-bold text-amber-400 mb-4">
+                <h3 class="text-xl font-semibold text-gray-200 mb-4">
                     Info Detail
-                </h1>
+                </h3>
                 <p class="text-gray-400 mb-2">Tahun Rilis: {{ $movie->release_year }}</p>
                 <p class="text-gray-400 mb-2">Genre: {{ $movie->genre }}</p>
+                <p class="text-gray-400 mb-2">Sutradara : {{ $movie->director }}</p>
             </div>
 
             <div class="relative z-0 mb-10">

@@ -4,6 +4,9 @@
         background-color: transparent !important;
         box-shadow: none !important;
     }
+    .slick-arrow{
+        display: none !important;
+    }
 </style>
 @endpush
 <x-app-layout>
@@ -25,7 +28,7 @@
                     </div>
                     <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                         <svg class="w-16 h-16 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                         </svg>
                     </div>
 
@@ -56,18 +59,32 @@
     </div>
     @push('scripts')
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('.movie-slider').slick({
                 slidesToShow: 5,
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 2000,
                 arrows: true,
-                dots: false,
-                responsive: [
-                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                    { breakpoint: 600, settings: { slidesToShow: 2 } },
-                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                dots: true,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
                 ]
             });
         });
