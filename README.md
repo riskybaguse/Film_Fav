@@ -1,61 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🎬 Aplikasi Manajemen Film – Laravel 12
 
-## About Laravel
+Aplikasi ini merupakan sistem manajemen data film berbasis Laravel 12. Aplikasi dilengkapi dengan fitur CRUD (Create, Read, Update, Delete) serta sistem autentikasi dan otorisasi untuk membedakan hak akses antara **user biasa** dan **admin**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur Utama
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat&logo=laravel&logoColor=white)
+![Laravel Breeze](https://img.shields.io/badge/Auth-Laravel_Breeze-8B5CF6?style=flat)
+![Blade](https://img.shields.io/badge/Template-Blade-F7523F?style=flat&logo=blade&logoColor=white)
+![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- CRUD data film (judul, sutradara, tahun rilis, sinopsis, poster)
+- Login & Register akun email (Laravel Breeze)
+- Autentikasi & otorisasi:
+  - Role-based access (User & Admin)
+  - Middleware untuk keamanan akses halaman
+- Validasi form:
+  - Field wajib (title, sutradara, tahun, poster)
+  - Title harus unik
+  - Tahun rilis minimal 2000 dan maksimal tahun sekarang
+- Navigasi dinamis: menu hanya muncul untuk role yang berhak
+- Seeder data dummy film
+- Blade templating untuk UI
+- Guard redirect non-admin ke halaman 403
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🧱 Teknologi & Arsitektur
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?logo=laravel&logoColor=white) **Laravel 12**
+- 🧭 **MVC Architecture** (Model-View-Controller)
+- 🎨 **Blade Templating Engine**
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white) **MySQL** (Database)
+- 🛠️ **Migration & Seeder**
+- 🔁 **Route Resource Laravel** (otomatis generate endpoint GET, POST, PUT, DELETE)
+- 🛡️ **Middleware & Guard** untuk kontrol akses
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🗂️ Struktur Aplikasi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- `app/Models`: Model untuk interaksi dengan database
+- `app/Http/Controllers`: Menangani logika bisnis & validasi input
+- `app/Http/Middleware`: Filter akses login dan role
+- `resources/views`: Blade template untuk UI (dashboard, create, edit, dll)
+- `routes/web.php`: Definisi semua URL aplikasi
+- `database/migrations`: Desain struktur tabel database
+- `database/seeders`: Data dummy awal
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🗂️ Struktur Aplikasi
 
-## Contributing
+- Login
+  ![App Screenshot](/resources/ss/Login.png)
+  
+- Kelola Film (Admin)
+  ![App Screenshot](/resources/ss/KelolaFilm.png)
+  
+- Create (Admin)
+  ![App Screenshot](/resources/ss/Create.png)
+  
+- Update (Admin)
+  ![App Screenshot](/resources/ss/Update.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Delete (Admin)
+  ![App Screenshot](/resources/ss/Delete.png)
+  
+- Dashboard 
+  ![App Screenshot](/resources/ss/DashboardUserBiasa.png)
 
-## Code of Conduct
+- Info Movie 
+  ![App Screenshot](/resources/ss/InfoMovie.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🚀 Cara Menjalankan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Clone repo ini dulu:
+   ```bash
+    git clone https://github.com/riskybaguse/Film_Fav.git
+2. Masuk ke folder proyek:
+   ```bash
+   cd Film_Fav
+3. Install dependencies Laravel:
+   ```bash
+   composer install
+4. Copy file .env.example jadi .env, lalu sesuaikan konfigurasi database:
+   ```bash
+   cp .env.example .env
+5. Generate app key:
+    ```bash
+    php artisan key:generate
+6. Migrasi database:
+    ```bash
+    php artisan migrate
+7. Jalankan server lokal:
+    ```bash
+    php artisan serve
+8. Buka browser dan akses:
+    ```bash
+    http://localhost:8000/pegawai
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 👤 Hak Akses
+
+- **User biasa** hanya bisa melihat informasi film
+- **Admin** dapat mengakses halaman kelola film:
+  - Menambah, mengedit, dan menghapus data film
+  - Mengelola konten dashboard
+
+---
+
+## 📝 Lisensi
+??
