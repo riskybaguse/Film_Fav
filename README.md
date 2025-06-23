@@ -52,7 +52,7 @@ Aplikasi ini merupakan sistem manajemen data film berbasis Laravel 12. Aplikasi 
 
 ---
 
-## 🗂️ Struktur Aplikasi
+## ✨ Screenshoot
 
 - Login
   ![App Screenshot](/resources/ss/Login.png)
