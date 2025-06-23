@@ -7,9 +7,9 @@
     body{
         background-image: linear-gradient(to bottom, rgba(12, 12, 12, 0.72), rgba(10, 10, 10, 0.6))
 , url("{{ $movie->poster_url ?? '' }}") !important;
-        background-size: 150px auto;
+        background-size: 200px auto;
         background-repeat: repeat; 
-        background-position: top left;
+        background-position: center center;
         background-attachment: fixed;  
     }
 </style>

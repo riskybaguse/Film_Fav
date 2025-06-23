@@ -12,7 +12,8 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <!-- Navbar dashboard aktif di dua sisi yaitu (dashboard utama atau movie_info.show) -->
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard') OR request()->routeIs('movies_info')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <!-- Admin Links -->

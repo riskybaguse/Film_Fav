@@ -32,7 +32,7 @@ class MovieController extends Controller
     {
         $request->validate(
             [
-                'title' => 'required|string|max:255',
+                'title' => 'required|string|max:255|unique:movies,title,',
                 'director' => 'required|string|max:255',
                 'release_year' => 'required|integer|min:2000|max:' . date('Y'),
                 'synopsis' => 'nullable|string',
@@ -62,7 +62,7 @@ class MovieController extends Controller
     {
         $request->validate(
             [
-                'title' => 'required|string|max:255',
+                'title' => 'required|string|max:255|unique:movies,title,' . $movie->id,
                 'director' => 'required|string|max:255',
                 'release_year' => 'required|integer|min:2000|max:' . date('Y'),
                 'synopsis' => 'nullable|string',

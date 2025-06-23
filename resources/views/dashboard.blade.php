@@ -19,7 +19,7 @@
         <div class="movie-slider">
             @forelse ($movies as $movie)
             <div class="px-2">
-                <a href="{{ route('movies_info.show', ['id' => $movie->id]) }}" class="movie-item group relative block bg-gray-800/50 rounded-lg overflow-hidden shadow-lg">
+                <a href="{{ route('movies_info', ['id' => $movie->id]) }}" class="movie-item group relative block bg-gray-800/50 rounded-lg overflow-hidden shadow-lg">
                     <div class="aspect-[2/3] w-full">
                         <img src="{{ $movie->poster_url }}"
                             onerror="this.onerror=null;this.src='https://placehold.co/400x600/1F2937/FFFFFF?text=Poster'"

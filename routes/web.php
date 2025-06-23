@@ -14,9 +14,9 @@ Route::get('/dashboard', function () {
     return view('dashboard', ['movies' => $movies]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/movies_info/{id}', [MovieController::class, 'show'])
+Route::get('/dashboard/movies_info/{id}', [MovieController::class, 'show'])
     ->middleware(['auth', 'verified'])
-    ->name('movies_info.show');
+    ->name('movies_info');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('admin/movies', MovieController::class)->names('admin.movies');

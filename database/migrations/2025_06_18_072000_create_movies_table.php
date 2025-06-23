@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->comment('The title of the movie');
+            $table->string('title')->unique()->comment('The title of the movie');
             $table->string('director')->nullable()->comment('The director of the movie');
             $table->year('release_year')->nullable()->comment('The year the movie was released');
             $table->text('synopsis')->nullable()->comment('A brief description of the movie');
